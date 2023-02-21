@@ -1,0 +1,1856 @@
+ Assignment 1:
+
+  1)using System;
+
+namespace Csharp_ProgramAssignment   
+  { 
+       class Calculator
+          {
+            static void Main(string[] arg)
+              {
+                Console.WriteLine("1 Addition" + " " + "2 Subtraction" + " " + "3 Multiplication" + " " + "4 Division");
+                Console.WriteLine("Enter the action to be performed: ");        //print
+                int action = Convert.ToInt32(Console.ReadLine());
+
+                Console.Write("Enter 1st number ");
+                int n1 = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Enter 2nd number ");
+                int n2 = Convert.ToInt32(Console.ReadLine());
+
+                int result = 0;
+
+                switch (action)
+                {
+                    case 1:
+                        {
+                            result = Add(n1, n2);
+                            break;
+                        }
+                    case 2:
+                        {
+                            result = Sub(n1, n2);
+                            break;
+                        }
+                    case 3:
+                        {
+                            result = Multi(n1, n2);
+                            break;
+                        }
+                    case 4:
+                        {
+                            result = Div(n1, n2);
+                            break;
+                        }
+                    default:
+                        Console.WriteLine("Wrong action!! try again");
+                        break;
+                }
+
+                Console.WriteLine("The result is {0}", result);
+                Console.ReadKey();
+
+
+                static int Add(int n1, int n2)
+                {
+                    int result = n1 + n2;
+                    return result;
+                }
+                static int Sub(int n1, int n2)
+                {
+                    int result = n1 - n2;
+                    return result;
+                }
+                static int Multi(int n1, int n2)
+                {
+                    int result = n1 * n2;
+                    return result;
+                }
+                static int Div(int n1, int n2)
+                {
+                    int result = n1 / n2;
+                    return result;
+                }
+
+            }
+        }
+    }
+
+ 2)using System;
+
+namespace Csharp_ProgramAssignment
+{
+    class Student_Avg
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Enter Student-1 Marks :");
+            double s1 = Convert.ToDouble(Console.ReadLine());
+
+
+
+            Console.Write("Enter Student-2 Marks :");
+            double s2 = Convert.ToDouble(Console.ReadLine());
+
+
+
+            Console.Write("Enter Student-3 Marks :");
+            double s3 = Convert.ToDouble(Console.ReadLine());
+
+
+
+            Console.Write("Enter Student-4 Marks :");
+            double s4 = Convert.ToDouble(Console.ReadLine());
+
+
+
+            Console.Write("Enter Student-5 Marks :");
+            double s5 = Convert.ToDouble(Console.ReadLine());
+
+
+
+            static double avgmarks(double s1, double s2, double s3, double s4, double s5)
+            {
+                double comp1 = (s1 >= s2) ? ((s1 >= s3) ? s1 : s3) : ((s2 >= s3) ? s2 : s3);
+                double result = (comp1 >= s4) ? ((comp1 >= s5) ? comp1 : s5) : ((s4 >= s5) ? s4 : s5);
+                return result;
+            }
+
+
+
+            Console.Write("Max Percentage:" + avgmarks(s1, s2, s3, s4, s5));
+
+
+
+        }
+    }
+}
+    
+
+4)using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Csharp_ProgramAssignment
+{
+    class SwapNo
+    {
+        public static void Main()
+        {
+            int n1, n2;
+            Console.Write("Enter a number: ");
+            n1 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter another number: ");
+            n2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Befor swap {0} {1}", n1, n2);
+            interchange(ref n1, ref n2);
+            Console.WriteLine("After swap {0} {1}", n1, n2);
+        }
+
+
+
+        public static void interchange(ref int n1, ref int n2)
+        {
+            n1 = n1 + n2;
+            n2 = n1 - n2;
+            n1 = n1 - n2;
+        }
+    }
+}
+
+3)using System;
+
+namespace Csharp_ProgramAssignment
+{
+    class ArrayInt
+    {
+        public static void Main()
+        {
+            int[] a = new int[100];
+            int n;
+
+            Console.Write("No of elements :");
+            n = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Input elements in the array :\n", n);
+
+            static int arrSum(int[] a, int n)
+            {
+                int sum = 0;
+                for (int i = 0; i < n; i++)
+                {
+                    a[i] = Convert.ToInt32(Console.ReadLine());
+                }
+
+                for (int i = 0; i < n; i++)
+                {
+                    sum += a[i];               //12 13 14 15  
+                   //12       13 = 25
+                    //25      14 =  39
+                }
+
+                return sum;
+            }
+
+
+
+            Console.Write("Sum:" + arrSum(a, n));
+        }
+
+
+
+
+
+    }
+}
+    
+5)using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Csharp_ProgramAssignment
+{
+    class Circle
+    {
+        public static void Main()
+        {
+            decimal pi = 3.14m;
+            int r = 0;
+            decimal area = 0m;
+            decimal circumference = 0m;
+            Console.WriteLine("Area of Circle");
+            Console.WriteLine("------------");
+            Console.WriteLine("Enter radius of Circle");
+            r = Convert.ToInt32(Console.ReadLine());
+            area = pi * r * r;
+            Circle.area(ref area);
+            Console.WriteLine("Circumference of Circle");
+            Console.WriteLine("------------------------");
+            Console.WriteLine("Enter radius of Circle");
+            r = Convert.ToInt32(Console.ReadLine());
+            circumference = 2 * pi * r;
+            Circle.Circumference(ref circumference);
+        }
+        public static void area(ref decimal a)
+        {
+            Console.WriteLine("Area of Circle={0}", a);
+        }
+        public static void Circumference(ref decimal c)
+        {
+            Console.WriteLine("Circumference of Circle={0}", c);
+
+        }
+
+
+        }
+    }
+}
+
+6) using System; 
+ public struct Books 
+ {   
+  private int BOOKID; 
+  private string TITLE;
+  private int PRICE;   
+  private string BOOKTYPE;    
+  public int bookid  
+  {     
+    get {return this.BOOKID;}    
+    set{this.BOOKID=value;}   
+  }  
+  public string Title    
+  {    
+   get {return this.TITLE;}   
+   set{this.TITLE=value;}  
+  }  
+  public int Price   
+  {    
+   get {return this.PRICE;}   
+   set{this.PRICE=value;}  
+  }  
+  public string booktype 
+  {  
+   get {return this.BOOKTYPE;}    
+   set{this.BOOKTYPE=value;}   
+  }  
+  public Books(int bookid,string title,int price,string booktype) 
+  {  
+   this.BOOKID=bookid;   
+   this.TITLE=title;    
+   this.PRICE=price;   
+   this.BOOKTYPE=booktype;  
+  }  
+  public void PrintDetails()   
+ {   
+  Console.WriteLine ("BookId ={0} , Title ={1} ,Price={2} ,BookType={3}",this.BOOKID,this.TITLE,this.PRICE,this.BOOKTYPE); 
+  } 
+  } 
+  public enum bookType 
+ {    
+  magazine,  
+   novel,   
+  referenceBook,  
+   miscllenous 
+ } 
+ public class program 
+ {    
+ public static void Main() 
+    {     
+    Books b1= new Books(101,"Bio",20,bookType.magazine);   
+      b1.PrintDetails();    
+    Books b2= new Books(102,"Phy",30,bookType.novel);    
+     b2.PrintDetails();      
+    Books b3= new Books (103,"civics",20,bookType.miscllenous);    
+ }
+  } 
+---------------------------------------------------------------------------------------------------------------
+Assignment no 2:                 
+             
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Employee_Management_System
+{
+    
+        public class Employee
+
+        {
+
+            int EmpNo;
+
+            string EmpName;
+
+            double Salary;
+
+            double HRA;
+
+            double TA;
+
+            double DA;
+
+            double PF;
+
+            double TDS;
+
+            double NetSalary;
+
+            double GrossSalary;
+
+            //method
+
+            public void set_EmpNo_Name_Salary()
+
+            {
+
+                //taking input of emp no,emp name and for  salary
+
+                Console.WriteLine("Enter Emp No, Emp Name,Salary of an an employee");
+
+                EmpNo = Convert.ToInt32(Console.ReadLine());
+
+                EmpName = Console.ReadLine();
+
+                Salary = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("Emp No =  {0}\nEmpName = {1}\nSalary = {2} ", EmpNo, EmpName, Salary);
+
+            }
+
+            public double GroSal()
+
+            {
+
+                GrossSalary = 0;
+
+                if (Salary < 5000)
+
+                {
+
+                    HRA = 10 * Salary / 100;
+
+                    TA = 5 * Salary / 100;
+
+                    DA = 15 * Salary / 100;
+
+                    GrossSalary = Salary + HRA + TA + DA;
+
+                }
+
+                else if (Salary < 10000)
+
+                {
+
+                    HRA = 15 * Salary / 100;
+
+                    TA = 10 * Salary / 100;
+
+                    DA = 20 * Salary / 100;
+
+                    GrossSalary = Salary + HRA + TA + DA;
+
+                }
+
+                else if (Salary < 150000)
+
+                {
+
+                    HRA = 20 * Salary / 100;
+
+                    TA = 15 * Salary / 100;
+
+                    DA = 25 * Salary / 100;
+
+                    GrossSalary = Salary + HRA + TA + DA;
+
+                }
+
+                else if (Salary < 200000)
+
+                {
+
+                    HRA = 25 * Salary / 100;
+
+                    TA = 20 * Salary / 100;
+
+                    DA = 30 * Salary / 100;
+
+                    GrossSalary = Salary + HRA + TA + DA;
+
+                }
+
+                else if (Salary >= 20000)
+
+                {
+
+                    HRA = 10 * Salary / 100;
+
+                    TA = 5 * Salary / 100;
+
+                    DA = 15 * Salary / 100;
+
+                    GrossSalary = Salary + HRA + TA + DA;
+
+                }
+
+                return GrossSalary;
+
+            }
+
+            public void CalCulateSalary()
+
+            {
+
+                Console.WriteLine("HERE PF , TDS AND NET SALARY OF AN EMPLOYEE");
+
+                Double GrosSal = GroSal();
+
+                PF = 10 * GrosSal / 100;
+
+                TDS = 18 * GrosSal / 100;
+
+                NetSalary = GrosSal - (PF + TDS);
+
+                Console.WriteLine(" PF = {0} \nTDS = {1}\nNetSalary = {2}", PF, TDS, NetSalary);
+
+            }
+
+            static void Main()
+
+            {
+
+                Employee emp = new Employee();
+
+                emp.set_EmpNo_Name_Salary();
+
+                Double Gs = emp.GroSal();
+
+                Console.WriteLine(" Gross SALARY {0}  ", Gs);
+
+                emp.CalCulateSalary();
+
+                Console.ReadLine();
+            }
+        }
+    }
+---------------------------------------------------------------------------------------------------------------
+Assignment 3:
+
+using System;
+
+using System.Collections.Generic;
+
+using System.Linq;
+
+using System.Text;
+
+using System.Threading.Tasks;
+
+using static System.Console;
+
+namespace EmployeeManagementSystem
+
+{
+
+    public interface IPrintable
+
+    {
+
+        void DisplayEmployeeDetails();
+
+    }
+
+    public class Employee
+
+    {
+
+        public int emp_id;
+
+        public string emp_name;
+
+        public float Salary;
+
+        public float GrossSalary;
+
+        public void GetSalaryWithEmployeeDetails()
+
+        {
+
+            WriteLine("Enter Employee Details Like emp_id,emp_name");
+
+            emp_id = int.Parse(ReadLine());
+
+            emp_name = ReadLine();
+
+            WriteLine("Enter Salary of an Employe .");
+
+            Salary = float.Parse(ReadLine());
+
+        }
+
+        public virtual void CalculateSalary()
+
+        {
+
+        }
+
+    }
+
+    public class Manager : Employee, IPrintable
+
+    {
+
+        private float PA;
+
+        private float FA;
+
+        private float OA;
+
+        public override void CalculateSalary()
+
+        {
+
+            PA = 8 * Salary / 100;
+
+            FA = 13 * Salary / 100;
+
+            OA = 3 * Salary / 100;
+
+            GrossSalary = Salary + PA + FA + OA;
+
+        }
+
+        public void DisplayEmployeeDetails()
+
+        {
+
+            WriteLine("Manager Details...");
+
+            WriteLine("emp_id: {0}\nemp_name: {1}\nGrossSalary:{2}", emp_id, emp_name, GrossSalary);
+
+        }
+
+    }
+
+    public class MarketingExecutive : Employee, IPrintable
+
+    //inherited Employee class and interface IEmployee
+
+    {
+
+        private int Distance;
+
+        private float TourAllowances;
+
+        private float Telephone_Allowances;
+
+        public override void CalculateSalary() //override method of Employee class
+
+        {
+
+            WriteLine("Enter Distance travelled during Marketing Executive in km");
+
+            Distance = int.Parse(ReadLine());//taking distance input
+
+            TourAllowances = 5 * Distance; //5 rupees per km
+
+            Telephone_Allowances = 1000;
+
+            GrossSalary = Salary + TourAllowances + Telephone_Allowances;
+
+        }
+
+        public void DisplayEmployeeDetails() //implementation of interface method
+
+        {
+
+            WriteLine("Marketing Executive Details....");
+
+            WriteLine("emp_id: {0}\n emp_name: {1}\nGross Salary:{2}", emp_id, emp_name, GrossSalary);
+
+        }
+
+    }
+
+    internal class Program
+
+    {
+static void Main(string[] args)
+
+        {
+
+            Manager mg = new Manager();
+
+            MarketingExecutive me = new MarketingExecutive();
+
+            WriteLine("Manager Input");
+
+            mg.GetSalaryWithEmployeeDetails();
+
+            mg.CalculateSalary();
+
+            mg.DisplayEmployeeDetails();
+
+            WriteLine("Marketing Executive Input");
+
+            me.GetSalaryWithEmployeeDetails();
+
+            me.CalculateSalary();
+
+            me.DisplayEmployeeDetails();
+
+            ReadLine();
+
+        }
+
+    }
+
+}
+
+-------------------------------------------------------------------------------------------------------
+
+Assignment 4:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+using static System.Convert;
+
+
+namespace MyStackPushPop
+{
+    public class MyStack
+    {
+        int size_of_stack;
+        int top_position = 0;
+        int[] array = new int[20];
+        public void GetSizeOfStack()//for getting size of stack 
+        {
+            WriteLine("Enter Size of Stack");
+            size_of_stack = int.Parse(ReadLine());
+        }
+        public void Push()
+        {
+            if (top_position == (size_of_stack - 1))
+            {
+                WriteLine("Stack is Full");
+            }
+            else
+            {
+                for (int i = 0; i < size_of_stack; i++)
+                {
+                    WriteLine("Insert element in stack");
+                    int element = int.Parse(ReadLine());
+                    array[++top_position] = element;
+                    WriteLine("Item pushed Successfully!");
+                }
+            }
+        }
+        public object Pop()
+        {
+            if (top_position == -1)
+            {
+                WriteLine("Stack is Empty");
+                return "No elements";
+            }
+            else
+            {
+                return array[top_position--];
+            }
+        }
+        public void Display()
+        {
+            for (int i = top_position; i > 0; i--)
+            {
+                WriteLine("Item {0}: |{1}| ", (i), array[i]);
+            }
+            ReadLine();
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            MyStack stack = new MyStack();
+            //stack.GetSizeOfStack(); 
+            while (true)
+            {
+                Clear();
+                WriteLine("Stack Menu Program");
+                WriteLine("1. Enter Size of Stack");
+                WriteLine("2. Push operation");
+                WriteLine("3. Pop Operation");
+                WriteLine("4. Display ");
+                WriteLine("5. Exit");
+                Write("Enter Your Choice");
+                int choice = ToInt32(ReadLine());
+                switch (choice)
+                {
+                    case 1:
+                        stack.GetSizeOfStack();
+                        break;
+                    case 2:
+                        stack.Push();
+                        break;
+                    case 3:
+                        WriteLine("Element removed: {0}", stack.Pop());
+                        ReadLine();
+                        break;
+                    case 4:
+                        stack.Display();
+                        break;
+                    case 5:
+                        Environment.Exit(0);
+                        break;
+                }
+            }
+        }
+    }
+} 
+
+------------------------------------------------------------------------------------------------------------
+Assignment no 5:
+
+using System;
+
+using System.Collections;
+
+using System.Collections.Generic;
+
+using System.Data;
+
+using System.Diagnostics;
+
+using System.Linq;
+
+using System.Text;
+
+using System.Threading.Tasks;
+
+namespace StackExceptionPro
+
+{
+
+    interface Istack
+
+    {
+
+        Boolean IsEmpty();
+
+        void Push(object element);
+
+        object Pop();
+
+        object Peek();
+
+        void Display();
+
+    }
+
+    class PushPop : Istack
+    {
+
+        public int top;
+
+        object[] item;
+
+        public int stack_size;
+
+        public PushPop(int stack_size) //parametrised constructor
+
+        {
+
+            this.stack_size = stack_size;
+
+            item = new object[stack_size];
+
+            top = -1;
+
+        }
+
+        public PushPop() //default constructor
+
+        {
+
+            stack_size = 10;
+
+            item = new object[stack_size];
+
+            top = -1;
+
+        }
+
+        public bool IsEmpty() //Method to check is stack empty or full
+
+        {
+
+            if (top == (stack_size - 1))
+
+            {
+
+                return true;
+
+            }
+
+            else
+
+                return false;
+
+        }
+
+        public void Push(object element)
+
+        {
+
+            if (top == (stack_size - 1))
+
+            {
+
+                throw new Exception("Exception Stack overflow because stack is full");
+
+            }
+
+            else
+
+            {
+
+                item[++top] = element;
+
+                Console.WriteLine("Item Pushed Successfully");
+
+            }
+
+        }
+        public object Pop()
+
+        {
+
+            if (IsEmpty())
+
+            {
+
+                throw new Exception("Exception underflow because stack is empty");
+
+                return null;
+
+            }
+
+            else
+
+            {
+
+                return item[top--];
+
+            }
+
+        }
+
+        public object Peek()
+
+        {
+
+            if (IsEmpty())
+
+            {
+
+                throw new Exception("Stack Underflow exception because stack is empty");
+
+                return null;
+
+            }
+
+            else
+
+            {
+
+                return item[top];
+
+            }
+        }
+
+        public void Display()
+
+        {
+
+            for (int i = top; i > -1; i--)
+
+            {
+
+                Console.WriteLine(item[i]);
+
+            }
+
+        }
+
+    }
+
+    internal class Program
+
+    {
+
+        static void Main(string[] args)
+
+        {
+
+            PushPop st = new PushPop();
+
+            object element;
+
+            while (true)
+
+            {
+
+                Console.Clear();
+
+                Console.WriteLine("1. IsEmpty()");
+
+                Console.WriteLine("2. Push()");
+
+                Console.WriteLine("3. Pop()");
+
+                Console.WriteLine("4. Peek()");
+
+                Console.WriteLine("5. Display()");
+
+                Console.WriteLine("6. Exit()");
+
+                Console.WriteLine("Enter Your Choice");
+
+                int choice;
+
+                choice = int.Parse(Console.ReadLine());
+
+                Console.WriteLine();
+
+                switch (choice)
+
+                {
+
+                    case 1:
+
+                        if (st.IsEmpty())
+
+                        {
+
+                            Console.WriteLine("Stack is Empty");
+
+                        }
+
+                        else
+
+                        {
+
+                            Console.WriteLine("Stack is not empty");
+
+                        }
+
+                        break;
+
+                    case 2:
+
+                        Console.WriteLine("Enter element");
+
+                        element = Console.ReadLine();
+
+                        try
+
+                        {
+
+                            st.Push(element);
+
+                        }
+
+                        catch (StackOverflowException e)
+
+                        {
+
+                            Console.WriteLine(e.Message);
+
+                        }
+
+                        break;
+
+                    case 3:
+
+                        try
+
+                        {
+
+                            element = st.Pop();
+
+                            Console.WriteLine("Element removed is {0} ", element);
+
+                        }
+
+                        catch (Exception e)
+
+                        {
+
+                            Console.WriteLine(e.Message);
+
+                        }
+
+                        break;
+
+                    case 4:
+
+                        try
+
+                        {
+
+                            element = st.Peek();
+
+                            Console.WriteLine("Element removed is {0} ", element);
+
+                        }
+
+                        catch (Exception e)
+
+                        {
+
+                            Console.WriteLine(e.Message);
+
+                        }
+
+                        break;
+
+                    case 5:
+
+                        st.Display();
+
+                        break;
+
+                    case 6:
+
+                        Environment.Exit(0);
+
+                        break;
+
+                    default:
+
+                        Console.WriteLine("Enter valid choice");
+
+                        break;
+
+                }
+
+                Console.ReadLine();
+
+            }
+
+        }
+    }
+}
+
+------------------------------------------------------------------------------------------------------------
+
+Assignment no 6:
+Delegates:
+
+using System:
+
+
+namespace Bank
+{
+    class BankAccount
+    {
+        public double AccountNumber = 999244678;
+        public string Name = "Priyanka Chavan";
+        public double bankbalance = 13500;
+        public delegate void dataDelegate();
+        public void data()
+        {
+            //    BankAccount Accounts = new BankAccount();
+            //    Console.WriteLine("enter account number");
+            //     Accounts.AccountNumber = Convert.ToInt64(Console.ReadLine());
+            //    Console.WriteLine("enter your name");
+            //         Accounts.Name = Console.ReadLine();
+            //    Console.WriteLine("enter"
+            //    Accounts.bankbalance = Convert.ToInt64(Console.ReadLine());
+            Console.WriteLine("Accountnumber={0}\nAccountHolder={1}\nBankbalance={2}", AccountNumber, Name, bankbalance);
+        }
+        public delegate void depositDelegate(double money);
+        public void deposit(double money)
+        {
+            if (money > 0)
+            {
+                bankbalance = bankbalance + money;
+
+                Console.WriteLine("Bank Balance=" + bankbalance);
+            }
+            else
+            {
+                Console.WriteLine("enter correct value of amount");
+            }
+
+            Console.WriteLine("Bank Balance=" + bankbalance);
+        }
+        public delegate void withdrawDelegate(double amount);
+        public void withdraw(double amount)
+        {
+            if (amount < bankbalance)
+            {
+                bankbalance -= amount;
+            }
+            else if (amount > bankbalance)
+            {
+                Console.WriteLine("Insufficient Balance");
+            }
+            else
+            {
+                Console.WriteLine("select correct choice");
+            }
+
+            Console.WriteLine("Bank Balance=" + bankbalance);
+        }
+        public delegate void balanceDelegate();
+        public void balance()
+        {
+            Console.WriteLine("bank balance=" + bankbalance);
+
+        }
+    }
+    class ICICIBankAccount : BankAccount
+    {
+        public void withdraw(double amount)
+        {
+            if (amount < bankbalance)
+            {
+                bankbalance -= amount;
+            }
+            else if (amount > bankbalance)
+            {
+                Console.WriteLine("Transaction cannot be continued as balance is insufficient in Account");
+            }
+            else
+            {
+                Console.WriteLine("select correct choice");
+            }
+
+            Console.WriteLine("Bank Balance=" + bankbalance);
+        }
+        public void balance()
+        {
+            if (bankbalance == 0)
+            {
+                Console.WriteLine("Transaction cannot be continued as balance is zero in Account");
+            }
+            Console.WriteLine("bank balance=" + bankbalance);
+
+        }
+    }
+    class HDFCBankAccount : BankAccount
+    {
+        public void withdraw(double amount)
+        {
+            if (amount < bankbalance & bankbalance > 1000)
+            {
+                bankbalance -= amount;
+            }
+            else if (amount < bankbalance & bankbalance < 1000)
+            {
+                Console.WriteLine("Transaction cannot be continued below specified limit of Rs.- 1000");
+            }
+            else
+            {
+                Console.WriteLine("select correct choice");
+            }
+
+            Console.WriteLine("Bank Balance=" + bankbalance);
+        }
+        public void balance()
+        {
+            if (bankbalance == 0)
+            {
+                Console.WriteLine("Transaction cannot be continued as balance is zero in Account");
+            }
+            Console.WriteLine("bank balance=" + bankbalance);
+
+        }
+    }
+    class transactions
+    {
+        public static void Main()
+        {
+            try
+            {
+            again:
+                Console.WriteLine("enter which banktransaction you want to do\n 1.Bank\n2.ICICI\n3.HDFC\n4.Exit ");
+
+                string ba = Console.ReadLine();
+                if (ba.ToUpper() == "BANK")
+                {
+                    transactions.BankTransactions();
+                }
+                else if (ba.ToUpper() == "ICICI")
+                {
+                    transactions.ICICIBankTransactions();
+                }
+                else if (ba.ToUpper() == "HDFC")
+                {
+                    transactions.HDFCBankTransactions();
+                }
+                else if (ba.ToUpper() == "EXIT")
+                {
+                    Console.WriteLine("thank you");
+                }
+                else
+                {
+                    Console.WriteLine("select correct choice");
+                    goto again;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.GetType().Name);
+            }
+        }
+        public static void BankTransactions()
+        {
+            BankAccount b = new BankAccount();
+            BankAccount.dataDelegate del = new BankAccount.dataDelegate(b.data);
+            del();
+            BankAccount.balanceDelegate del3 = new BankAccount.balanceDelegate(b.balance);
+            BankAccount.withdrawDelegate del2 = new BankAccount.withdrawDelegate(b.withdraw);
+            BankAccount.depositDelegate del1 = new BankAccount.depositDelegate(b.deposit);
+        tran:
+            Console.WriteLine("enter youer choice\n1.depoist\n2.withdraw\n3.balance\n4.exit\nselect respective number for transactions");
+            int choice = Convert.ToInt32(Console.ReadLine());
+            {
+                if (choice == 1)
+                {
+                    Console.WriteLine("enter the amount");
+                    int amnt = Convert.ToInt32(Console.ReadLine());
+
+                    del1(amnt);
+
+                    goto tran;
+
+                }
+                else if (choice == 2)
+                {
+                    Console.WriteLine("enter the amount");
+                    int amnt = Convert.ToInt32(Console.ReadLine());
+
+
+                    del2(amnt);
+                    goto tran;
+
+
+                }
+                else if (choice == 3)
+                {
+
+                    del3();
+                    goto tran;
+                }
+                else if (choice == 4)
+                {
+                    Console.WriteLine("thank you");
+                }
+                else
+                {
+                    Console.WriteLine("select correct choice");
+                    goto tran;
+                }
+                del3();
+                if (b.bankbalance < 1000)
+                {
+                    Console.WriteLine("account is underbalance" + b.bankbalance);
+                }
+                else if (b.bankbalance == 0)
+                {
+                    Console.WriteLine("bank balance is zero");
+                }
+
+            }
+
+        }
+
+        public static void ICICIBankTransactions()
+        {
+            ICICIBankAccount b = new ICICIBankAccount();
+            ICICIBankAccount.dataDelegate del = new ICICIBankAccount.dataDelegate(b.data);
+            del();
+            ICICIBankAccount.balanceDelegate del3 = new ICICIBankAccount.balanceDelegate(b.balance);
+            ICICIBankAccount.withdrawDelegate del2 = new ICICIBankAccount.withdrawDelegate(b.withdraw);
+            ICICIBankAccount.depositDelegate del1 = new ICICIBankAccount.depositDelegate(b.deposit);
+        tran:
+            Console.WriteLine("enter youer choice\n1.depoist\n2.withdraw\n3.balance\n4.exit\nselect respective number for transactions");
+            int choice = Convert.ToInt32(Console.ReadLine());
+            {
+                if (choice == 1)
+              {
+                    Console.WriteLine("enter the amount");
+                    int amnt = Convert.ToInt32(Console.ReadLine());
+                    del1(amnt);
+                    goto tran;
+
+                }
+                else if (choice == 2)
+                {
+                    Console.WriteLine("enter the amount");
+                    int amnt = Convert.ToInt32(Console.ReadLine());
+                    del2(amnt);
+                    goto tran;
+
+
+                }
+                else if (choice == 3)
+                {
+                    del3();
+                    goto tran;
+                }
+                else if (choice == 4)
+                {
+                    Console.WriteLine("thank you");
+                }
+                else
+                {
+                    Console.WriteLine("select correct choice");
+                    goto tran;
+                }
+                del3();
+                if (b.bankbalance < 1000)
+                {
+                    Console.WriteLine("account is underbalance" + b.bankbalance);
+                }
+                else if (b.bankbalance == 0)
+                {
+                    Console.WriteLine("bank balance is zero");
+                }
+
+            }
+
+        }
+        public static void HDFCBankTransactions()
+        {
+            HDFCBankAccount b = new HDFCBankAccount();
+            HDFCBankAccount.dataDelegate del = new HDFCBankAccount.dataDelegate(b.data);
+            del();
+            HDFCBankAccount.balanceDelegate del3 = new HDFCBankAccount.balanceDelegate(b.balance);
+            HDFCBankAccount.withdrawDelegate del2 = new HDFCBankAccount.withdrawDelegate(b.withdraw);
+            HDFCBankAccount.depositDelegate del1 = new HDFCBankAccount.depositDelegate(b.deposit);
+        tran:
+            Console.WriteLine("enter youer choice\n1.depoist\n2.withdraw\n3.balance\n4.exit\nselect respective number for transactions");
+            int choice = Convert.ToInt32(Console.ReadLine());
+            {
+                if (choice == 1)
+                {
+                    Console.WriteLine("enter the amount");
+                    int amnt = Convert.ToInt32(Console.ReadLine());
+                    del1(amnt);
+               goto tran;
+
+                }
+                else if (choice == 2)
+                {
+                    Console.WriteLine("enter the amount");
+                    int amnt = Convert.ToInt32(Console.ReadLine());
+                    del2(amnt);
+                    goto tran;
+
+                }
+                else if (choice == 3)
+                {
+                    del3();
+                    goto tran;
+                }
+                else if (choice == 4)
+                {
+                    Console.WriteLine("thank you");
+                }
+                else
+                {
+                    Console.WriteLine("select correct choice");
+                    goto tran;
+                }
+                b.balance();
+                if (b.bankbalance < 1000)
+                {
+                    Console.WriteLine("account is underbalance" + b.bankbalance);
+                }
+                else if (b.bankbalance == 0)
+                {
+                    Console.WriteLine("bank balance is zero");
+                }
+
+            }
+
+        }
+    }
+
+Multicastdelegates:
+
+using System;
+
+
+namespace Delegates
+{//Multicaste Delegate//
+    public delegate void EmployeeDelegate();
+
+    public class MultiCastDelegate
+    {
+        static void Main(string[] args)
+        {
+
+
+
+            EmployeeDelegate empdel1 = new EmployeeDelegate(KillometerTravel);
+            EmployeeDelegate empdel2 = new EmployeeDelegate(Tourallowance);
+            EmployeeDelegate empdel3 = new EmployeeDelegate(Telephoneallowance);
+            EmployeeDelegate empdel4 = new EmployeeDelegate(details);
+            EmployeeDelegate empdel5 = empdel1 + empdel2 + empdel3 + empdel4;
+            empdel5();
+
+        }
+        public static void KillometerTravel()
+        {
+            int kt = 2;
+            Console.WriteLine("Kilometertravel: {0}", kt);
+        }
+        public static void Tourallowance()
+        {
+            int kt = 2;
+            int ta = (int)kt * 5;
+            Console.WriteLine("Tour Allowance:{0}", ta);
+
+        }
+        public static void Telephoneallowance()
+        {
+            int tpa = 1000;
+            Console.WriteLine("Telephone Allowance:{0}", tpa);
+        }
+        public static void details()
+        {
+            int ID = 1;
+            string name = "Rasna";
+            int salary = 20000;
+            Console.WriteLine("MarketingExecutive ID:{0}", ID);
+            Console.WriteLine("MarketingExecutive Name:{0}", name);
+            Console.WriteLine("MarketingExecutive salary:{0}", salary);
+        }
+    }
+}
+
+
+
+--------------------------------------------------------------------------------------------------------------
+
+Assignment no 7:
+
+class 
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace q7
+{
+    class BankAccount
+    {
+        public double AccountNumber;
+        public string Name;
+        public double bankbalance;
+        public void data()
+        {
+            Console.WriteLine("enter account number");
+            AccountNumber = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("enter name");
+            Name = Console.ReadLine();
+            Console.WriteLine("bank balance");
+            bankbalance = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Account number={0}\nname={1}\nbank balance={2}", AccountNumber, Name, bankbalance);
+            string filepath = @"D:\sample\employee.txt";
+            StreamWriter sw = File.CreateText(filepath);
+            sw.WriteLine("account number=" + AccountNumber);
+            sw.WriteLine("name=" + Name);
+            sw.WriteLine("bankbalance=" + bankbalance);
+            sw.Close();
+
+            Console.WriteLine("---data reading---");
+            using (StreamReader sr = File.OpenText(filepath))
+
+            {
+                String s = "";
+
+                while ((s = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(s);
+                }
+            }
+
+
+
+        }
+        class filedata
+        {
+            public static void Main()
+            {
+                try
+                {
+                     BankAccount b = new BankAccount();
+                    b.data();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.GetType().Name);
+                }
+            }
+        }
+    }
+}
+
+program
+
+using System;
+using System.IO;
+
+namespace FileIODemo
+{
+    public class Program
+    {
+        public static void Main()
+        {
+            try
+            {
+
+                string path = @"C:\Users\PRIYANKA\OneDrive\Desktop\sample\";
+                string[] files = Directory.GetFiles(path);
+                string[] directories = Directory.GetDirectories(path);
+
+                Console.WriteLine($"Files in {path}\n");
+                foreach (string file in files)
+                {
+                    string fileName = Path.GetFileName(file);
+                    Console.WriteLine(fileName);
+                    string filepath = Path.Combine(path, fileName);
+                    FileInfo myfile = new FileInfo(filepath);
+                    // Opening file to read  
+                    StreamReader sr = myfile.OpenText();
+                    string data = "";
+                    while ((data = sr.ReadLine()) != null)
+                    {
+                        Console.WriteLine(data);
+                    }
+                    Console.WriteLine("\n");
+                }
+
+
+                Console.WriteLine($"Subdirectories inside {path}\n");
+                foreach (string directory in directories)
+                {
+                    DirectoryInfo directoryinfo = new DirectoryInfo(directory);
+                    directoryinfo.GetDirectories();
+                    string directoryName = directoryinfo.Name;
+                    Console.WriteLine(directoryName);
+                }
+            }
+            catch (IOException e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+    }
+}
+
+------------------------------------------------------------------------------------------------------
+Assignment no 8:
+
+class
+
+using System;
+using System.Reflection;
+using System.Collections.Generic;
+
+
+[AttributeUsage(AttributeTargets.All)]
+public class SoftwareAttribute : Attribute
+{
+    String ProjectName;
+    String Description;
+    String ClientName;
+    String StartedDate;
+    String EndDate;
+
+    public SoftwareAttribute(String p, String d, String c, String s, String e)
+    {
+        ProjectName = p;
+        Description = d;
+        ClientName = c;
+        StartedDate = s;
+        EndDate = e;
+
+    }
+
+    public static void AttributeDisplay(Type classType)
+    {
+        Console.WriteLine("Methods of class {0}", classType.Name);
+
+
+
+        MethodInfo[] methods = classType.GetMethods();
+
+
+
+        for (int i = 0; i < methods.GetLength(0); i++)
+        {
+
+
+            object[] attributesArray = methods[i].GetCustomAttributes(true);
+
+            foreach (Attribute item in attributesArray)
+            {
+                if (item is SoftwareAttribute)
+                {
+
+
+                    SoftwareAttribute attributeObject = (SoftwareAttribute)item;
+                    Console.WriteLine("{0} - {1}, {2}, {3} , {4} ,{5} ", methods[i].Name, attributeObject.ProjectName, attributeObject.Description, attributeObject.ClientName, attributeObject.EndDate, attributeObject.EndDate);
+                }
+            }
+        }
+    }
+}
+class ICICI
+{
+    double AccountNumber;
+    string Name;
+    double Bankbalance;
+    public ICICI(double a, string n, double b)
+    {
+        AccountNumber = a;
+        Name = n;
+        Bankbalance = b;
+    }
+    [SoftwareAttribute("accessor", "gives the values of account number", "client name icici", "5th aug", "5th aug")]
+    public double getAccountNumber()
+    {
+        return AccountNumber;
+    }
+    [SoftwareAttribute("accessor", "gives the values of account holder name", "client name icici", "5th aug", "5th aug")]
+    public string getName()
+    {
+        return Name;
+    }
+    [SoftwareAttribute("accessor", "gives the values of bankbalance", "client name icici", "5th aug", "5th aug")]
+    public double getbankbalance()
+    {
+        return Bankbalance;
+    }
+}
+class HDFC
+{
+    double AccountNumber;
+    string Name;
+    double Bankbalance;
+    public HDFC(double accountNumber, string name, double bankbalance)
+    {
+        AccountNumber = accountNumber;
+        Name = name;
+        Bankbalance = bankbalance;
+    }
+    [SoftwareAttribute("accessor", "gives the values of account number", "client name HDFC", "5th aug", "5th aug")]
+    public double getAccountNumber()
+    {
+        return AccountNumber;
+    }
+    [SoftwareAttribute("accessor", "gives the values of account holder name", "client name HDFC", "5th aug", "5th aug")]
+    public string getName()
+    {
+        return Name;
+    }
+    [SoftwareAttribute("accessor", "gives the values of account holder name", "client name HDFC", "5th aug", "5th aug")]
+    public double getbankbalance()
+    {
+        return Bankbalance;
+    }
+}
+class Program
+{
+
+
+    static void Main(string[] args)
+    {
+
+
+        SoftwareAttribute.AttributeDisplay(typeof(ICICI));
+
+        Console.WriteLine();
+
+        SoftwareAttribute.AttributeDisplay(typeof(HDFC));
+    }
+}
+
+
+program
+
+using System;
+using System.Reflection;
+using System.Collections.Generic;
+
+
+[AttributeUsage(AttributeTargets.All)]
+public class SoftwareAttribute : Attribute
+{
+    String ProjectName;
+    String Description;
+    String ClientName;
+    String StartedDate;
+    String EndDate;
+
+    public SoftwareAttribute(String p, String d, String c, String s, String e)
+    {
+        ProjectName = p;
+        Description = d;
+        ClientName = c;
+        StartedDate = s;
+        EndDate = e;
+
+    }
+
+    public static void AttributeDisplay(Type classType)
+    {
+        Console.WriteLine("Methods of class {0}", classType.Name);
+
+
+
+        MethodInfo[] methods = classType.GetMethods();
+
+
+
+        for (int i = 0; i < methods.GetLength(0); i++)
+        {
+
+
+            object[] attributesArray = methods[i].GetCustomAttributes(true);
+
+            foreach (Attribute item in attributesArray)
+            {
+                if (item is SoftwareAttribute)
+                {
+
+
+                    SoftwareAttribute attributeObject = (SoftwareAttribute)item;
+                    Console.WriteLine("{0} - {1}, {2}, {3} , {4} ,{5} ", methods[i].Name, attributeObject.ProjectName, attributeObject.Description, attributeObject.ClientName, attributeObject.EndDate, attributeObject.EndDate);
+                }
+            }
+        }
+    }
+}
+class ICICI
+{
+    double AccountNumber;
+    string Name;
+    double Bankbalance;
+    public ICICI(double a, string n, double b)
+    {
+        AccountNumber = a;
+        Name = n;
+        Bankbalance = b;
+    }
+    [SoftwareAttribute("accessor", "gives the values of account number", "client name icici", "5th aug", "5th aug")]
+    public double getAccountNumber()
+    {
+        return AccountNumber;
+    }
+    [SoftwareAttribute("accessor", "gives the values of account holder name", "client name icici", "5th aug", "5th aug")]
+    public string getName()
+    {
+        return Name;
+    }
+    [SoftwareAttribute("accessor", "gives the values of bankbalance", "client name icici", "5th aug", "5th aug")]
+    public double getbankbalance()
+    {
+        return Bankbalance;
+    }
+}
+class HDFC
+{
+    double AccountNumber;
+    string Name;
+    double Bankbalance;
+    public HDFC(double accountNumber, string name, double bankbalance)
+    {
+        AccountNumber = accountNumber;
+        Name = name;
+        Bankbalance = bankbalance;
+    }
+    [SoftwareAttribute("accessor", "gives the values of account number", "client name HDFC", "5th aug", "5th aug")]
+    public double getAccountNumber()
+    {
+        return AccountNumber;
+    }
+    [SoftwareAttribute("accessor", "gives the values of account holder name", "client name HDFC", "5th aug", "5th aug")]
+    public string getName()
+    {
+        return Name;
+    }
+    [SoftwareAttribute("accessor", "gives the values of account holder name", "client name HDFC", "5th aug", "5th aug")]
+    public double getbankbalance()
+    {
+        return Bankbalance;
+    }
+}
+class Program
+{
+
+
+    static void Main(string[] args)
+    {
+
+
+        SoftwareAttribute.AttributeDisplay(typeof(ICICI));
+
+        Console.WriteLine();
+
+        SoftwareAttribute.AttributeDisplay(typeof(HDFC));
+    }
+}
+
+
